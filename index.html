@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Небольшой лендинг SMM и AI-контента Натали Смирновой.">
+  <title>Натали Смирнова — SMM & AI-контент</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home">Натали SM</a>
+      <nav class="menu">
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="badge">Открыта к новым проектам</p>
+          <h1>Привожу клиентов из соцсетей через <span>AI-контент</span> и стратегию</h1>
+          <p class="lead">
+            Мини-лендинг с рабочей формой: оставьте заявку, и я свяжусь с вами в Telegram.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Оставить заявку</a>
+            <a class="btn btn-secondary" href="https://t.me/NataliArt_SMM" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/images/hero-photo.png" alt="Натали Смирнова">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>Обо мне</h2>
+        <p>
+          Я SMM-специалист с фокусом на контенте, который помогает бизнесу получать заявки и продажи.
+          Работаю с визуалом, текстами, воронками и AI-инструментами.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="services">
+      <div class="container">
+        <h2>Что делаю</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>SMM под ключ</h3>
+            <p>Контент-план, оформление, ведение профилей и анализ метрик.</p>
+          </article>
+          <article class="card">
+            <h3>AI-контент</h3>
+            <p>Генерация изображений и сценариев, ускорение продакшна контента.</p>
+          </article>
+          <article class="card">
+            <h3>Автоматизация</h3>
+            <p>Простые воронки и чат-бот решения для обработки лидов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Оставить заявку</h2>
+        <form id="leadForm" class="form">
+          <label for="name">Имя</label>
+          <input id="name" name="name" type="text" required placeholder="Ваше имя">
+
+          <label for="contactInput">Telegram или Email</label>
+          <input id="contactInput" name="contact" type="text" required placeholder="@username или email">
+
+          <label for="message">Коротко о задаче</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Что нужно сделать?"></textarea>
+
+          <button type="submit" class="btn btn-primary">Отправить</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Натали Смирнова</p>
+      <a href="mailto:natalismrnova.codsmm@gmail.com">natalismrnova.codsmm@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

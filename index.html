@@ -9,6 +9,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body.light-theme {
+      --bg: #f7f7fb;
+      --bg-muted: #ececf3;
+      --text: #1c1c2a;
+      --text-muted: #505063;
+      --border: rgba(40, 40, 60, 0.16);
+    }
+
+    body.light-theme .header {
+      background: rgba(247, 247, 251, 0.9);
+    }
+
+    body.light-theme .logo,
+    body.light-theme .menu a:hover {
+      color: #1c1c2a;
+    }
+
+    body.light-theme .btn-secondary {
+      color: #1c1c2a;
+    }
+
+    body.light-theme .card {
+      background: #ffffff;
+    }
+
+    body.light-theme .form input,
+    body.light-theme .form textarea {
+      color: #1c1c2a;
+      background: #ffffff;
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text);
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -18,6 +61,7 @@
         <a href="#about">Обо мне</a>
         <a href="#services">Услуги</a>
         <a href="#contact">Контакты</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙 Тёмная</button>
       </nav>
     </div>
   </header>
@@ -99,6 +143,31 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+
+      const toggleButton = document.getElementById("themeToggle");
+      if (!toggleButton) return;
+
+      const updateToggleText = () => {
+        const isLight = document.body.classList.contains("light-theme");
+        toggleButton.textContent = isLight ? "☀️ Светлая" : "🌙 Тёмная";
+      };
+
+      updateToggleText();
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        const isLight = document.body.classList.contains("light-theme");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+        updateToggleText();
+      });
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
